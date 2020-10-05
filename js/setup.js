@@ -6,6 +6,8 @@ const WIZARD_COAT_COLOR = [`rgb(101, 137, 164)`, `rgb(241, 43, 107)`, `rgb(146, 
 const WIZARD_EYES_COLOR = [`black`, `red`, `blue`, `yellow`, `green`];
 const WIZARD_FIREBALL_COLOR = [`#ee4830`, `#30a8ee`, `#5ce6c0`, `#e848d5`, `#e6e848`];
 const WIZARDS_COUNT = 4;
+const ESC_CODE = 27;
+const ENTER_CODE = 13;
 
 
 const similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
@@ -69,7 +71,7 @@ const setupClose = setup.querySelector(`.setup-close`);
 const setupUserName = setup.querySelector(`.setup-user-name`);
 
 const onPopupEscPress = function (evt) {
-  if (evt.key === `Escape`) {
+  if (evt.keyCode === ESC_CODE) {
     if (evt.target !== setupUserName) {
       evt.preventDefault();
       closePopup();
@@ -92,7 +94,7 @@ setupOpen.addEventListener(`click`, function () {
 });
 
 setupOpen.addEventListener(`keydown`, function (evt) {
-  if (evt.key === `Enter`) {
+  if (evt.key === ENTER_CODE) {
     openPopup();
   }
 });
@@ -102,7 +104,7 @@ setupClose.addEventListener(`click`, function () {
 });
 
 setupClose.addEventListener(`keydown`, function (evt) {
-  if (evt.key === `Enter`) {
+  if (evt.keyCode === ENTER_CODE) {
     closePopup();
   }
 });
