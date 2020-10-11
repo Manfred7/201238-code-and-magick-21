@@ -22,6 +22,8 @@
 
     setup.style.top = startY;
     setup.style.left = startX;
+
+    window.similarWizards.show();
   };
 
   const closePopup = function () {
