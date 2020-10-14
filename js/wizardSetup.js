@@ -33,4 +33,17 @@
     inputFireballColor.value = color;
   });
 
+  const userDialog = document.querySelector(`.setup`);
+  const form = userDialog.querySelector(`.setup-wizard-form`);
+
+  const onSucces = function () {
+    userDialog.classList.add(`hidden`);
+  };
+
+  const submitHandler = function (evt) {
+    window.backend.save(new FormData(form), onSucces, window.utils.onError);
+    evt.preventDefault();
+  };
+  form.addEventListener(`submit`, submitHandler);
+
 })();
